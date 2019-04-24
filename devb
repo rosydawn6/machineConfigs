@@ -1,0 +1,65 @@
+tmux start-server
+tmux new-session -d -s visualizevis -n bashv
+tmux new-session -d -s standard-ipython-roaming -n bashs
+tmux new-session -d -s project-local -n bashtl
+tmux new-session -d -s project-roaming -n bashtr
+tmux new-session -d -s projecta-roaming -n bashtr
+tmux new-session -d -s ipython-notebooks -n bashtr
+tmux new-session -d -s sundry-roaming -n bashsr
+tmux new-session -d -s slackviairssi -n slack 
+tmux new-session -d -s aimviafinch -n aim
+tmux new-session -d -s manyshells -n bashms
+
+tmux new-window -t standard-ipython-roaming:2 
+tmux new-window -t standard-ipython-roaming:3 
+tmux new-window -t standard-ipython-roaming:4
+tmux new-window -t standard-ipython-roaming:5
+tmux send-keys -t standard-ipython-roaming:bashs "/home/pasmith/anaconda23/bin/ipython" C-m
+tmux send-keys -t standard-ipython-roaming:2 "/home/pasmith/anaconda3/bin/ipython" C-m
+
+tmux new-window -t project-local:2 
+tmux new-window -t project-local:3 
+tmux new-window -t project-local:4
+tmux new-window -t project-local:5
+tmux send-keys -t project-local:bashtl "mysql" C-m
+tmux send-keys -t project-local:3 "cd /data/servers/topcat/conf" C-m
+tmux send-keys -t project-local:4 "cd /data/servers/topcat/logs" C-m
+tmux send-keys -t project-local:5 "/home/pasmith/scripts/CleanGeneral 1 1" C-m
+
+tmux new-window -t project-roaming:2 
+tmux new-window -t project-roaming:3 
+tmux new-window -t project-roaming:4
+tmux new-window -t project-roaming:5
+
+tmux new-window -t projecta-roaming:2 
+tmux new-window -t projecta-roaming:3 
+tmux new-window -t projecta-roaming:4
+tmux new-window -t projecta-roaming:5
+
+tmux new-window -t ipython-notebooks:2 
+tmux new-window -t ipython-notebooks:3 
+tmux new-window -t ipython-notebooks:4
+tmux new-window -t ipython-notebooks:5
+
+tmux new-window -t sundry-roaming:2 
+tmux new-window -t sundry-roaming:3 
+tmux new-window -t sundry-roaming:4
+tmux new-window -t sundry-roaming:5
+
+tmux new-window -t manyshells:2 
+tmux new-window -t manyshells:3 
+tmux new-window -t manyshells:4
+tmux new-window -t manyshells:5
+
+tmux new-window -t visualizevis:2 
+tmux new-window -t visualizevis:3 
+tmux new-window -t visualizevis:4
+tmux new-window -t visualizevis:5
+
+tmux send-keys -t visualizevis:bashv "vim" C-m
+tmux send-keys -t visualizevis:4 "/home/pasmith/anaconda3/bin/ipython" C-m
+tmux send-keys -t visualizevis:5 "/home/pasmith/anaconda3/bin/ipython" C-m
+
+
+tmux send-keys -t aimviafinch:aim "finch" C-m
+tmux send-keys -t slackviairssi:slack "TERM=screen-256color; irssi" C-m

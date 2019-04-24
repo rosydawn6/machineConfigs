@@ -1,0 +1,68 @@
+%load_ext autoreload
+#test
+from __future__ import division
+from numpy import *
+from pandas import *
+%autoreload 2
+import sys
+from numpy import *
+import io
+import collections
+import glob
+
+try:
+  print('PYHOME %s'%(PYHOME))
+  sys.path.append(PYHOME)
+except:
+	print('WARNING PYHOME NOT DEFINED')
+
+try:
+	exec((open('%s/startup3.py'%(PYHOME)).read()))
+except Exception as e:
+	print(str(e))
+	print('exec of PYHOME on startup3 did not work')
+	pass
+
+try:
+	exec((open('%s/connect_db.py'%(PYHOME)).read()))
+except:
+	print('exec PYHOME on connect_db did not work')
+	pass
+
+try:
+	imp.reload(settings)
+except:
+	print('settings did not reload')
+	pass
+try:
+	imp.reload(Utilities)
+except:
+	print('Utilities did not reload')
+	pass
+try:
+	imp.reload(ShellUtilities)
+except:
+	print('ShellUtilities did not reload')
+	pass
+try:
+	imp.reload(MachineLearningA)
+except:
+	print('MachineLearningA did not reload')
+	pass
+try:
+	imp.reload(RulesAnalysis)
+except:
+	print('RulesAnalysis did not reload')
+	pass
+try:
+	imp.reload(HiveHelp)
+except:
+	print('HiveHelp did not reload')
+	pass
+try:
+	imp.reload(QueryObject);
+except:
+	print('QueryObject did not reload')
+	pass
+
+print('done in startup.ipy')
